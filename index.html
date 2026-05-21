@@ -2,94 +2,154 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aurora — Real Estate Tokenized | TROPTIONS</title>
+<title>Aurora — Housing Protocol Infrastructure | TROPTIONS</title>
 <style>
-:root{--bg:#0a0a0a;--surface:#111;--gold:#d4af37;--text:#e5e5e5;--muted:#888;--radius:6px}
+:root{--bg:#0a0a0a;--surface:#111;--surface2:#1a1a1a;--gold:#d4af37;--green:#4ade80;--text:#e5e5e5;--muted:#888;--radius:6px}
 *{box-sizing:border-box;margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 body{background:var(--bg);color:var(--text);line-height:1.6}
-.container{max-width:1100px;margin:0 auto;padding:2rem}
-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;padding-bottom:1rem;margin-bottom:3rem}
-.brand{font-weight:800;letter-spacing:.05em;color:var(--gold);text-transform:uppercase}
-nav a{color:var(--muted);text-decoration:none;margin-left:1.5rem;font-size:.9rem}
+.container{max-width:1140px;margin:0 auto;padding:2rem}
+header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;padding-bottom:1rem;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.brand{font-weight:800;letter-spacing:.05em;color:var(--gold);text-transform:uppercase;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none;margin-left:1.25rem;font-size:.85rem}
 nav a:hover{color:var(--gold)}
-.hero{text-align:center;padding:4rem 1rem}
-.hero h1{font-size:3rem;line-height:1.1;margin-bottom:1rem;background:linear-gradient(90deg,#d4af37,#f0e68c);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:var(--muted);max-width:600px;margin:0 auto 2rem;font-size:1.15rem}
-.cta{display:inline-block;background:var(--gold);color:#000;padding:.9rem 1.8rem;border-radius:var(--radius);text-decoration:none;font-weight:700}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin:3rem 0}
-.stat{background:var(--surface);border:1px solid #222;padding:1.5rem;border-radius:var(--radius);text-align:center}
-.stat-num{display:block;font-size:2rem;font-weight:800;color:var(--gold)}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin:3rem 0}
-.card{background:var(--surface);border:1px solid #222;padding:1.5rem;border-radius:var(--radius)}
-.card h3{color:var(--gold);margin-bottom:.5rem;font-size:1.1rem}
-.card p{color:var(--muted);font-size:.95rem}
-.ttn{background:#0f1f0f;border:1px solid #1a3a1a;margin:3rem 0;padding:2rem;border-radius:var(--radius)}
-.ttn h3{color:#6f6;font-size:1.1rem;margin-bottom:.5rem}
+section{margin:3rem 0}
+h2{font-size:1.5rem;color:var(--gold);margin-bottom:1rem;border-bottom:1px solid #222;padding-bottom:.5rem}
+h3{color:var(--gold);font-size:1.05rem;margin:1rem 0 .5rem}
+.hero{text-align:center;padding:3rem 1rem 2rem}
+.hero h1{font-size:clamp(2rem,5vw,2.75rem);line-height:1.15;margin-bottom:1rem;background:linear-gradient(90deg,#d4af37,#f0e68c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--muted);max-width:720px;margin:0 auto 1.5rem}
+.cta{display:inline-block;background:var(--gold);color:#000;padding:.85rem 1.6rem;border-radius:var(--radius);text-decoration:none;font-weight:700;margin:.25rem}
+.cta.secondary{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.progress-wrap{background:var(--surface);border:1px solid #222;border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0}
+.bar{height:10px;background:#222;border-radius:5px;overflow:hidden;margin:.5rem 0 1rem}
+.bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#f0e68c);width:58%}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.stat{background:var(--surface);border:1px solid #222;padding:1.25rem;border-radius:var(--radius);text-align:center}
+.stat-num{display:block;font-size:1.75rem;font-weight:800;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid #222;padding:1.25rem;border-radius:var(--radius)}
+.card p{color:var(--muted);font-size:.9rem}
+.badge{display:inline-block;font-size:.7rem;font-weight:700;padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;margin-left:.35rem}
+.built{background:#0f2a0f;color:var(--green)}
+.partial{background:#2a2208;color:var(--gold)}
+.gap{background:#2a0f0f;color:#f88}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:1rem 0}
+th,td{border:1px solid #222;padding:.6rem .75rem;text-align:left}
+th{background:var(--surface2);color:var(--gold);font-weight:600}
+td{color:var(--muted)}
+td strong{color:var(--text)}
+.cost-highlight{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.givbux{background:#0f1a2a;border:1px solid #1a3050;padding:1.5rem;border-radius:var(--radius)}
 footer{border-top:1px solid #222;margin-top:4rem;padding-top:2rem;text-align:center;color:var(--muted);font-size:.85rem}
 footer a{color:var(--muted)}
+ul{margin:.5rem 0 .5rem 1.25rem;color:var(--muted);font-size:.9rem}
+@media(max-width:700px){nav{width:100%}nav a{margin:0 1rem 0 0;display:inline-block}}
 </style>
 </head>
 <body>
 <div class="container">
 <header>
-<div class="brand">Aurora · TROPTIONS</div>
+<div class="brand">Aurora · TROPTIONS Infrastructure</div>
 <nav>
-<a href="https://troptionslive.unykorn.org/exchange-os">Exchange</a>
-<a href="https://troptionslive.unykorn.org/sports">Sports</a>
-<a href="https://fthedu.unykorn.org/">University</a>
+<a href="#built">Built</a>
+<a href="#elevate">ELEVATE Map</a>
+<a href="#costs">Costs</a>
+<a href="#givbux">GivBux</a>
 <a href="https://fthtrading.github.io/T-Lev-8-/">Deal Room</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Fractional Real Estate.<br>On-Chain Proof.</h1>
-<p>Tokenize property ownership on Solana. Trade fractional shares on TROPTIONS Exchange OS. Broadcast listings on TTN Local.</p>
-<a href="#list" class="cta">List a Property</a>
+<h1>Housing Protocol Infrastructure.<br>Already Under Construction.</h1>
+<p>Aurora is the TROPTIONS real-estate vertical: fractional RWA, SEO/R2O utility flows, and the same rails powering exchange, stablecoins, XRPL, AI, and proof — mapped to the ELEVATE ($LEV8) white paper and extensible to partners like GivBux.</p>
+<a href="https://launch.unykorn.org/" class="cta">Launch on TROPTIONS</a>
+<a href="https://fthtrading.github.io/T-Lev-8-/" class="cta secondary">Partner Deal Room</a>
 </section>
 
+<div class="progress-wrap">
+<strong style="color:var(--text)">Overall technical completion (GivBux-class full system)</strong>
+<div class="bar"><span></span></div>
+<p style="color:var(--muted);font-size:.9rem"><strong style="color:var(--gold)">~58%</strong> — horizontal infrastructure largely built; LEV8-specific Solana programs (SEO repayment, R2O Risk Reward escrow) and production housing DApp remain.</p>
+</div>
+
 <div class="stats">
-<div class="stat"><span class="stat-num">$0</span>TVL</div>
-<div class="stat"><span class="stat-num">0</span>Properties</div>
-<div class="stat"><span class="stat-num">0</span>Cities</div>
-<div class="stat"><span class="stat-num">6</span>ATL Matches (WC26)</div>
+<div class="stat"><span class="stat-num">~58%</span>Weighted complete</div>
+<div class="stat"><span class="stat-num">$505K+</span>Sunk eng. (replacement est.)</div>
+<div class="stat"><span class="stat-num">$255K+</span>To white-paper-complete</div>
+<div class="stat"><span class="stat-num">8</span>Partner gates (on-chain)</div>
 </div>
 
-<div class="features">
-<div class="card">
-<h3>🏢 Tokenize</h3>
-<p>Convert real property into SPL tokens. Legal wrapper + IPFS deed registry. Apostle Chain proof.</p>
+<section id="built">
+<h2>What TROPTIONS Has Already Built</h2>
+<div class="grid">
+<div class="card"><h3>Exchange &amp; Liquidity <span class="badge built">Live</span></h3><p>troptionslive Exchange OS, Jupiter/Meteora path, stablecoin on/off-ramps (USDC/USDT/USDF).</p></div>
+<div class="card"><h3>Solana Mint &amp; IPFS <span class="badge built">Live</span></h3><p>launch.unykorn.org, solana-launcher, metadata + SPL mint authority controls.</p></div>
+<div class="card"><h3>XRPL &amp; Multi-Chain <span class="badge built">Built</span></h3><p>XRPL scripts, Troptions-L1 bridge crates, fth-stablecoin-rail (5-chain USDF).</p></div>
+<div class="card"><h3>x402 + Apostle Proof <span class="badge built">Built</span></h3><p>Chain 7332 receipts, AI-to-AI metering, revenue ledger patterns.</p></div>
+<div class="card"><h3>Event Commerce <span class="badge built">Live</span></h3><p>TTN/sports, QR merchant onboarding, sponsor tiers — WC26 Atlanta anchor.</p></div>
+<div class="card"><h3>RWA Truth / FTH <span class="badge partial">Partial</span></h3><p>rwa-realestate: TruthEngine, TEV, FTHEnforcer, TLEV8GateManager (Sepolia ready).</p></div>
+<div class="card"><h3>Partner Launch OS <span class="badge partial">Partial</span></h3><p>T-Build: compliance, risk, SEO/R2O UI stubs, 8-gate config.</p></div>
+<div class="card"><h3>LEV8 Anchor Programs <span class="badge gap">Gap</span></h3><p>SEO repayment, R2O vesting + Risk Reward — placeholders only (WP Appendix C).</p></div>
 </div>
-<div class="card">
-<h3>📺 TTN Local</h3>
-<p>TheRealEstateConnections becomes your broadcast layer. Open houses, walkthroughs, verifiable audience.</p>
-</div>
-<div class="card">
-<h3>⚖️ Trade</h3>
-<p>Live order books on XRPL. AMM pools for fractional RE liquidity. Sub-cent settlement.</p>
-</div>
-<div class="card">
-<h3>🔐 Verify</h3>
-<p>Issuer proof packets, audit labels, and on-chain title checks before any trade clears.</p>
-</div>
-<div class="card">
-<h3>💰 Earn Yield</h3>
-<p>Rental revenue distributed to token holders. Automated USDC/USDT stablecoin rails.</p>
-</div>
-<div class="card">
-<h3>🌍 World Cup Overlay</h3>
-<p>Atlanta short-term rental tokens for 2026. Fan housing, host revenue, liquid exit before kickoff.</p>
-</div>
-</div>
+</section>
 
-<div class="ttn">
-<h3>📡 TTN Local Broadcast</h3>
-<p>Every listing gets a channel. Every open house gets a stream. Revenue and viewership verified on Apostle Chain + IPFS.</p>
-<p style="margin-top:.75rem;color:var(--muted);font-size:.9rem">Coming soon: auto-mint property NFTs at scan time.</p>
+<section id="elevate">
+<h2>ELEVATE White Paper → Aurora Map</h2>
+<p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">Source: ELEVATE WP v1.0 draft 3.7 (Apr 2026). Full matrix in T-Lev-8- repo.</p>
+<table>
+<thead><tr><th>White paper module</th><th>TROPTIONS asset</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><strong>SEO on-chain repayment</strong></td><td>T-Build + future Anchor program</td><td><span class="badge partial">Partial</span></td></tr>
+<tr><td><strong>R2O option + Risk Reward</strong></td><td>FMV AI + escrow placeholders</td><td><span class="badge partial">Partial</span></td></tr>
+<tr><td><strong>Oracle USD ↔ token</strong></td><td>PayOps, DONK, Chainlink path</td><td><span class="badge partial">Partial</span></td></tr>
+<tr><td><strong>KYC/AML sandbox</strong></td><td>kycOnboardingEngine, risk engine</td><td><span class="badge partial">Partial</span></td></tr>
+<tr><td><strong>DAO / 8 gates</strong></td><td>TLEV8GateManager, deal room</td><td><span class="badge partial">Partial</span></td></tr>
+<tr><td><strong>Sponsor + merchant incentives</strong></td><td>troptionslive QR + tiers</td><td><span class="badge built">Built</span></td></tr>
+<tr><td><strong>TTN / education / community</strong></td><td>sports + fthedu</td><td><span class="badge built">Built</span></td></tr>
+<tr><td><strong>No pooled treasury</strong></td><td>x402 direct fees</td><td><span class="badge built">Built</span></td></tr>
+</tbody>
+</table>
+<p style="margin-top:1rem;font-size:.9rem;color:var(--muted)">Detailed docs: <a href="https://github.com/FTHTrading/T-Lev-8-/blob/main/STRATEGIC/AURORA_ELEVATE_STACK_MAP.md" style="color:var(--gold)">AURORA_ELEVATE_STACK_MAP.md</a> · <a href="https://github.com/FTHTrading/T-Lev-8-/blob/main/INTEGRATION/LEV8_TROPTIONS_FULL_STACK.md" style="color:var(--gold)">Full stack integration</a></p>
+</section>
+
+<section id="costs">
+<h2>Costs: Sunk vs Remaining</h2>
+<p style="color:var(--muted);font-size:.9rem">Internal planning figures — not a quote for partners. Replacement-cost bands from repo inventory + reuse analysis.</p>
+<div class="cost-highlight">
+<div class="card"><h3>Sunk engineering</h3><p><strong style="color:var(--text)">~$505K – $1.43M</strong> replacement value across troptions, x402, launcher, RWA, T-Build, stablecoin rail.</p></div>
+<div class="card"><h3>To finish LEV8 protocol</h3><p><strong style="color:var(--text)">~$255K – $450K</strong> Anchor programs, housing DApp, KYC live, audits, legal sandbox.</p></div>
+<div class="card"><h3>GivBux-class MVP</h3><p><strong style="color:var(--text)">~$120K – $200K</strong> Phase 1–2 only (XRPL + USDC + Partner API) — requires their API spec.</p></div>
+<div class="card"><h3>Monthly ops</h3><p><strong style="color:var(--text)">~$3K – $14K</strong> RPC, KYC usage, infra, counsel.</p></div>
 </div>
+<p style="margin-top:1rem;font-size:.9rem"><a href="https://github.com/FTHTrading/T-Lev-8-/blob/main/STRATEGIC/COST_AND_COMPLETION_BREAKDOWN.md" style="color:var(--gold)">Full breakdown →</a></p>
+</section>
+
+<section id="givbux">
+<h2>GivBux (OTC: GBUX) — Partnership Architecture</h2>
+<div class="givbux">
+<p style="color:var(--muted);font-size:.9rem">GivBux is a <strong style="color:var(--text)">public fintech super app</strong> (cashback, auto-charity, wallet) — <strong style="color:var(--text)">no public developer API</strong>. Their v2 “real-time crypto exchange” PR (May 2024) is not live on givbuxsuperapp.com. TROPTIONS positions as <strong style="color:var(--gold)">white-label settlement + exchange + AI + proof</strong>, not a competing consumer app.</p>
+<ul>
+<li><strong>High fit:</strong> Crypto convert, XRPL/USDC rails, IR-grade on-chain proof, charity % allocation</li>
+<li><strong>Low fit:</strong> Their closed merchant cashback network, eGifts UX</li>
+<li><strong>Blocker:</strong> Signed API/webhook spec + MSB/compliance boundaries before build</li>
+</ul>
+<p style="margin-top:1rem;font-size:.9rem"><a href="https://github.com/FTHTrading/T-Lev-8-/blob/main/STRATEGIC/GIVBUX_INTEGRATION_ARCHITECTURE.md" style="color:var(--gold)">Architecture + IR email draft →</a></p>
+</div>
+</section>
+
+<section>
+<h2>Product Surfaces (Live Links)</h2>
+<div class="grid">
+<div class="card"><h3>Fractional RE</h3><p>Tokenize, deed proof, TTN Local broadcast for listings.</p></div>
+<div class="card"><h3>World Cup 2026</h3><p>Atlanta short-term rental overlay — 6 matches.</p></div>
+<div class="card"><h3>Trade</h3><p><a href="https://troptionslive.unykorn.org/exchange-os" style="color:var(--gold)">Exchange OS</a></p></div>
+<div class="card"><h3>Impact / ESG</h3><p><a href="https://impact.unykorn.org" style="color:var(--green)">impact.unykorn.org</a></p></div>
+</div>
+</section>
 
 <footer>
-<p>Aurora is part of the <a href="https://troptions.unykorn.org">TROPTIONS</a> ecosystem.</p>
-<p style="margin-top:.5rem">Powered by Solana · Apostle Chain · IPFS · TROPTIONS Exchange OS</p>
+<p>Aurora is TROPTIONS-owned infrastructure — not a securities offering. ELEVATE ($LEV8) partner path subject to 8 gates and Master Agreement.</p>
+<p style="margin-top:.5rem">Solana · XRPL · Apostle Chain · IPFS · USDF · <a href="https://troptions.unykorn.org/troptions">TROPTIONS</a></p>
 </footer>
 </div>
 </body>
